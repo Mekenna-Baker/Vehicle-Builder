@@ -185,7 +185,7 @@ class Cli {
           [],
           parseInt(answers.towingCapacity),
         );
-        
+
         // TODO: Use the answers object to pass the required properties to the Truck constructor //
         // TODO: push the truck to the vehicles array
         this.vehicles.push(truck);
@@ -253,20 +253,20 @@ class Cli {
       ])
       .then((answers) => {
         const motorbike = new Motorbike(
-        Cli.generateVin(),
-        answers.color,
-        answers.make,
-        answers.model,
-        parseInt(answers.year),
-        parseInt(answers.weight),
-        parseInt(answers.topSpeed),
+          Cli.generateVin(),
+          answers.color,
+          answers.make,
+          answers.model,
+          parseInt(answers.year),
+          parseInt(answers.weight),
+          parseInt(answers.topSpeed),
           []
         );
         // TODO: Use the answers object to pass the required properties to the Motorbike constructor //
         // TODO: push the motorbike to the vehicles array//
         this.vehicles.push(motorbike);
         // TODO: set the selectedVehicleVin to the vin of the motorbike //
-         this.selectedVehicleVin = motorbike.vin;
+        this.selectedVehicleVin = motorbike.vin;
         // TODO: perform actions on the motorbike
         this.performActions();
       });
@@ -294,9 +294,9 @@ class Cli {
         // TODO: check if the selected vehicle is the truck
         if (selectedVehicle.vin === truck.vin) {
           console.log("The truck cannot tow itself. Select another action.")
-        // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action//
-        this.performActions();
-        // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action//
+          // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action//
+          this.performActions();
+          // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action//
         } else {
           console.log(`Towing vehicle: ${selectedVehicle.vin} -- ${selectedVehicle.make} ${selectedVehicle.model}`);
 
@@ -315,7 +315,7 @@ class Cli {
           type: 'list',
           name: 'action',
           message: 'Select an action',
-          // TODO: add options to tow and wheelie
+          // TODO: add options to tow and wheelie //
           choices: [
             'Print details',
             'Start vehicle',
@@ -325,6 +325,8 @@ class Cli {
             'Turn right',
             'Turn left',
             'Reverse',
+            'Wheelie',
+            'Tow',
             'Select or create another vehicle',
             'Exit',
           ],
